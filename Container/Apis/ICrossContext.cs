@@ -1,4 +1,5 @@
-﻿namespace Cr7Sund.IocContainer
+﻿using System;
+namespace Cr7Sund.IocContainer
 {
 
     public interface ICrossContext : IContext

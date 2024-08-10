@@ -1,4 +1,6 @@
-﻿using Cr7Sund.Utility;
+﻿using Cr7Sund.FrameWork.Util;
+using System;
+using System.Collections.Generic;
 namespace Cr7Sund.IocContainer
 {
     public abstract class Context : IContext
@@ -12,7 +14,7 @@ namespace Cr7Sund.IocContainer
         {
             Init();
         }
-        
+
         public virtual void AddContext(IContext context)
         {
             AssertUtil.IsFalse(_contexts.Contains(context));
@@ -53,20 +55,20 @@ namespace Cr7Sund.IocContainer
         {
             InjectionBinder.Bind<TKey>().To(value).AsCrossContext().ToName(name);
         }
-        public void BindSingleton<TKey, TValue>()
+        public void BindAsSingleton<TKey, TValue>()
         {
             InjectionBinder.Bind<TKey>().To<TValue>().AsSingleton();
         }
-        public void BindSingleton<TKey, TValue>(object name)
+        public void BindAsSingleton<TKey, TValue>(object name)
         {
             InjectionBinder.Bind<TKey>().To<TValue>().AsSingleton().ToName(name);
         }
 
-        public void BindCrossContextAndSingleton<TKey, TValue>()
+        public void BindAsCrossAndSingleton<TKey, TValue>()
         {
             InjectionBinder.Bind<TKey>().To<TValue>().AsCrossContext().AsSingleton();
         }
-        public void BindCrossContextAndSingleton<TKey, TValue>(object name)
+        public void BindAsCrossAndSingleton<TKey, TValue>(object name)
         {
             InjectionBinder.Bind<TKey>().To<TValue>().ToName(name).AsCrossContext().AsSingleton();
         }
@@ -95,7 +97,7 @@ namespace Cr7Sund.IocContainer
         {
             return InjectionBinder.GetInstance(key);
         }
-        
+
         protected virtual void Init()
         {
             _contexts = new List<IContext>();

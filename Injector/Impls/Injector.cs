@@ -1,8 +1,8 @@
 using System;
 using System.Reflection;
 using System.Text;
-using Cr7Sund.IocContainer;
-using Cr7Sund.Utility;
+using Cr7Sund.FrameWork.Util;
+
 namespace Cr7Sund.IocContainer
 {
 

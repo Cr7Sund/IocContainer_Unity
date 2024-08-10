@@ -1,4 +1,5 @@
-﻿namespace Cr7Sund.IocContainer
+﻿using System;
+namespace Cr7Sund.IocContainer
 {
     /// <summary>
     /// Represents a context for managing instances and dependencies.
@@ -53,7 +54,7 @@
         /// </summary>
         /// <typeparam name="TKey">The type of the key to associate with the singleton.</typeparam>
         /// <typeparam name="TValue">The type of the singleton instance.</typeparam>
-        void BindSingleton<TKey, TValue>();
+        void BindAsSingleton<TKey, TValue>();
 
         /// <summary>
         /// Binds a type as a singleton service with a given name.
@@ -61,14 +62,14 @@
         /// <typeparam name="TKey">The type of the key to associate with the singleton.</typeparam>
         /// <typeparam name="TValue">The type of the singleton instance.</typeparam>
         /// <param name="name">The name to associate with the singleton.</param>
-        void BindSingleton<TKey, TValue>(object name);
+        void BindAsSingleton<TKey, TValue>(object name);
 
         /// <summary>
         /// Binds a type as both a cross-context and singleton service.
         /// </summary>
         /// <typeparam name="TKey">The type of the key to associate with the service.</typeparam>
         /// <typeparam name="TValue">The type of the service instance.</typeparam>
-        void BindCrossContextAndSingleton<TKey, TValue>();
+        void BindAsCrossAndSingleton<TKey, TValue>();
 
         /// <summary>
         /// Binds a type as both a cross-context and singleton service with a given name.
@@ -76,7 +77,7 @@
         /// <typeparam name="TKey">The type of the key to associate with the service.</typeparam>
         /// <typeparam name="TValue">The type of the service instance.</typeparam>
         /// <param name="name">The name to associate with the service.</param>
-        void BindCrossContextAndSingleton<TKey, TValue>(object name);
+        void BindAsCrossAndSingleton<TKey, TValue>(object name);
 
         /// <summary>
         /// Unbinds a type or named instance from the context.

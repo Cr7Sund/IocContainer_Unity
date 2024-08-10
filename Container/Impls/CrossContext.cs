@@ -1,4 +1,6 @@
-﻿using Cr7Sund.Utility;
+﻿using Cr7Sund.FrameWork.Util;
+using System;
+using System.Collections.Generic;
 namespace Cr7Sund.IocContainer
 {
     public abstract class CrossContext : Context, ICrossContext

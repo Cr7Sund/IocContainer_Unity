@@ -1,4 +1,5 @@
-﻿namespace Cr7Sund.IocContainer
+﻿using System;
+namespace Cr7Sund.IocContainer
 {
     public enum ContextExceptionType
     {
@@ -11,5 +12,5 @@
         /// </summary>
         EmptyCrossContext
     }
-    
+
 }

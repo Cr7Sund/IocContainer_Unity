@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
-using Cr7Sund.Utility;
+using Cr7Sund.FrameWork.Util;
+using System;
+using System.Linq;
 namespace Cr7Sund.IocContainer
 {
     public class SemiBinding : ISemiBinding
@@ -144,7 +146,7 @@ namespace Cr7Sund.IocContainer
         {
             _size = 0;
             _capacity = 0;
-            foreach (object? item in _objectValue)
+            foreach (object item in _objectValue)
             {
                 if (item is IDisposable disposable)
                 {
@@ -173,7 +175,7 @@ namespace Cr7Sund.IocContainer
 
             if (_capacity != _objectValue.Length)
             {
-                object[]? newItems = new object[_capacity];
+                object[] newItems = new object[_capacity];
                 Array.Copy(_objectValue, newItems, _size);
                 _objectValue = newItems;
             }

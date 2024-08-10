@@ -1,9 +1,8 @@
 using System;
 using System.Reflection;
-using Cr7Sund.IocContainer;
+
 namespace Cr7Sund.IocContainer
 {
-
     public class ReflectedClass : IReflectedClass
     {
         public bool PreGenerated { get; set; }

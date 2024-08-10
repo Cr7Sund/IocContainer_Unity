@@ -1,5 +1,7 @@
-using Cr7Sund.Utility;
-using Cr7Sund.IocContainer;
+using Cr7Sund.FrameWork.Util;
+
+using System;
+using System.Collections.Generic;
 namespace Cr7Sund.IocContainer
 {
 
@@ -80,7 +82,7 @@ namespace Cr7Sund.IocContainer
             return base.Bind<T>() as IInjectionBinding;
         }
 
-        public IInjectionBinding GetBinding(Type type)
+        public new IInjectionBinding GetBinding(Type type)
         {
             return GetBinding(type, null);
         }
@@ -90,7 +92,7 @@ namespace Cr7Sund.IocContainer
             return GetBinding(typeof(T), name);
         }
 
-        public virtual IInjectionBinding GetBinding(Type type, object name)
+        public new virtual IInjectionBinding GetBinding(Type type, object name)
         {
             return base.GetBinding(type, name) as IInjectionBinding;
         }

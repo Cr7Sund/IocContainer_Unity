@@ -1,3 +1,4 @@
+using System;
 namespace Cr7Sund.IocContainer
 {
 
@@ -118,7 +119,7 @@ namespace Cr7Sund.IocContainer
 
         public IBinding ToName(object name)
         {
-            object? toName = name == null ? BindingConst.NULLOIDNAME : name;
+            object toName = name == null ? BindingConst.NULLOIDNAME : name;
             object oldName = _name;
 
             _name = toName;

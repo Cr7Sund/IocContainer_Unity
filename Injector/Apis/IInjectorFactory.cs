@@ -6,6 +6,7 @@
  * @seeCr7Sund.Framework.Api.IInjector
  */
 
+using System;
 namespace Cr7Sund.IocContainer
 {
 

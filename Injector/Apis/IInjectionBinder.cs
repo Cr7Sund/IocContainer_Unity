@@ -1,4 +1,6 @@
-using Cr7Sund.Utility;
+using Cr7Sund.FrameWork.Util;
+using System;
+using System.Collections.Generic;
 namespace Cr7Sund.IocContainer
 {
 
@@ -40,8 +42,8 @@ namespace Cr7Sund.IocContainer
 
         new IInjectionBinding Bind<T>();
         new IInjectionBinding GetBinding<T>(object name = null);
-        IInjectionBinding GetBinding(Type key);
-        IInjectionBinding GetBinding(Type key, object name);
+        new IInjectionBinding GetBinding(Type key);
+        new IInjectionBinding GetBinding(Type key, object name);
     }
 
 }

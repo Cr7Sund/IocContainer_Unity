@@ -1,3 +1,4 @@
+using System;
 namespace Cr7Sund.IocContainer
 {
 
@@ -8,5 +9,5 @@ namespace Cr7Sund.IocContainer
         /// </summary>
         IInjectionBinder CrossContextBinder { get; set; }
     }
-    
+
 }

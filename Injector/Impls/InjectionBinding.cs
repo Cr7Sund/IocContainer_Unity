@@ -1,13 +1,14 @@
-using Cr7Sund.Utility;
-using Cr7Sund.IocContainer;
+using Cr7Sund.FrameWork.Util;
+
+using System;
 namespace Cr7Sund.IocContainer
 {
 
     public class InjectionBinding : Binding, IInjectionBinding
     {
-        public InjectionBinding(Binder.BindingResolver resolver):base(resolver)
+        public InjectionBinding(Binder.BindingResolver resolver) : base(resolver)
         {
-            
+
         }
 
 
@@ -16,7 +17,7 @@ namespace Cr7Sund.IocContainer
             var keyType = Key;
             if (!keyType.IsAssignableFrom(objType))
             {
-                throw new Exception($"{InjectionExceptionType.ILLEGAL_BINDING_VALUE}: Injection cannot bind a type ({objType}) that does not extend or implement the binding type ({keyType}).");
+                throw new MyException($"Injection cannot bind a type ({objType}) that does not extend or implement the binding type ({keyType}).", InjectionExceptionType.ILLEGAL_BINDING_VALUE);
             }
         }
 

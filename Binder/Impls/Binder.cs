@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Cr7Sund.FrameWork.Util;
 namespace Cr7Sund.IocContainer
 {
 
@@ -166,7 +169,7 @@ namespace Cr7Sund.IocContainer
                     {
                         if (!existingBinding.IsWeak)
                         {
-                            throw new Exception($"{BinderExceptionType.CONFLICT_IN_BINDER}: there exist same binding key: {binding.Key} name: {binding.Name} ");
+                            throw new MyException($"there exist same binding key: {binding.Key} name: {binding.Name} ", BinderExceptionType.CONFLICT_IN_BINDER);
                         }
 
                         list.RemoveAt(i);

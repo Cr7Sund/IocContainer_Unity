@@ -1,6 +1,6 @@
+using System;
 namespace Cr7Sund.IocContainer
 {
-
     public enum InjectionExceptionType
     {
         /// No InjectionBinder found.
